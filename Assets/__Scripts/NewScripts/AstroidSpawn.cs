@@ -4,7 +4,7 @@ public class AstroidSpawn : MonoBehaviour
 {
     private const float ASTROID_SPAWN_TIMER = 3f;
 
-    [SerializeField] private GameObject[] Astroid_Prefabs;
+    [SerializeField] private Asteroid_SO Asteroid_SO_;
     private Vector3 ScreenBounds;
     private float AstroidSpawnTimer = 0f;
 
@@ -21,15 +21,8 @@ public class AstroidSpawn : MonoBehaviour
         if (AstroidSpawnTimer >= ASTROID_SPAWN_TIMER)
         {
             AstroidSpawnTimer = 0f;
-            Instantiate(GetRandomAstroid(), GetRandomPosition(), Quaternion.identity);
+            Instantiate(Asteroid_SO_.GetAstroid(), GetRandomPosition(), Quaternion.identity);
         }
-    }
-
-    private GameObject GetRandomAstroid()
-    {
-        int index = Random.Range(0, Astroid_Prefabs.Length);
-        // print("Astroid: " + index);
-        return Astroid_Prefabs[index];
     }
 
     private Vector3 GetRandomPosition()

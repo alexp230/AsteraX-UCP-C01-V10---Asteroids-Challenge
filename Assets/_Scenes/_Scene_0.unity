@@ -695,10 +695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c6cea70f1fbda040aca863cd78582d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Astroid_Prefabs:
-  - {fileID: 1029653053436338, guid: 1293b0763d7d344e0b908c097078ac09, type: 3}
-  - {fileID: 1669921439223048, guid: 5513cde93bb3343768ced35921a9c3c2, type: 3}
-  - {fileID: 1317570492134680, guid: a6d3ccfc58a1f41368479aabb6050561, type: 3}
+  Asteroid_SO_: {fileID: 11400000, guid: afd73ec4d35ca354f8047ec595f636ab, type: 2}
 --- !u!1001 &1391987036
 PrefabInstance:
   m_ObjectHideFlags: 0
