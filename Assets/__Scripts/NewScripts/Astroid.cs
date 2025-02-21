@@ -94,8 +94,10 @@ public class Astroid : MonoBehaviour
             foreach (Transform child in this.transform)
                 child.GetComponent<MeshCollider>().enabled = true;
 
-            this.transform.GetChild(0).SetParent(null);
-            this.transform.GetChild(0).SetParent(null);
+            if (this.transform.childCount > 0)
+                this.transform.GetChild(0).SetParent(null);
+            if (this.transform.childCount > 0)
+                this.transform.GetChild(0).SetParent(null);
         }
         
         Destroy(this.gameObject);
