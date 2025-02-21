@@ -23,5 +23,16 @@ public class Asteroid_SO : ScriptableObject
             default: AstroidA_Prefab.GetComponent<MeshFilter>().mesh = AstroidA_Mesh; return AstroidA_Prefab;
         }
     }
+
+    public GameObject GetAstroid(char type)
+    {
+        switch (type)
+        {
+            case 'A': AstroidA_Prefab.GetComponent<MeshFilter>().mesh = AstroidA_Mesh; return AstroidA_Prefab;
+            case 'B': AstroidB_Prefab.GetComponent<MeshFilter>().mesh = AstroidB_Mesh; return AstroidB_Prefab;
+            case 'C': AstroidC_Prefab.GetComponent<MeshFilter>().mesh = AstroidC_Mesh; return AstroidC_Prefab;
+            default: return null;
+        }
+    }
     
 }

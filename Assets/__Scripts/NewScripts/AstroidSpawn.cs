@@ -25,8 +25,8 @@ public class AstroidSpawn : MonoBehaviour
 
     private Vector3 GetRandomPosition()
     {
-        int x = Random.Range((int)(-ScreenBounds.x), (int)(ScreenBounds.x+1));
-        int y = Random.Range((int)(-ScreenBounds.y), (int)(ScreenBounds.y+1));
+        float x = Random.Range(-ScreenBounds.x-1f, ScreenBounds.x+1);
+        float y = Random.Range(0, 2) == 0 ? -ScreenBounds.y-1f : ScreenBounds.y+1f;
         return new Vector3(x, y, 0);
     }
 
