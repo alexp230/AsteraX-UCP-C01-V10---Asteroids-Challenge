@@ -91,13 +91,20 @@ public class Astroid : MonoBehaviour
         
         if (this.AsteroidType != 'C')
         {
-            foreach (Transform child in this.transform)
-                child.GetComponent<MeshCollider>().enabled = true;
+            for (int i=0; i<2; ++i)
+            {
+                if (this.transform.childCount <= 0)
+                    continue;
+                
+                Transform astroidTransform = this.transform.GetChild(0);
 
-            if (this.transform.childCount > 0)
-                this.transform.GetChild(0).SetParent(null);
-            if (this.transform.childCount > 0)
-                this.transform.GetChild(0).SetParent(null);
+                astroidTransform.GetComponent<MeshCollider>().enabled = true;
+
+                astroidTransform.GetComponent<Rigidbody>().velocity = Random.onUnitSphere * GetSpeed() * 2;
+                astroidTransform.GetComponent<Rigidbody>().angularVelocity = Random.onUnitSphere * GetSpeed() * 7;
+
+                astroidTransform.SetParent(null);
+            }
         }
         
         Destroy(this.gameObject);
