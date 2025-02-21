@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class AstroidSpawn : MonoBehaviour
 {
-    private const float ASTROID_SPAWN_TIMER = 3f;
+    private const float ASTROID_SPAWN_TIMER = 30f;
 
     [SerializeField] private Asteroid_SO Asteroid_SO_;
     private Vector3 ScreenBounds;
-    private float AstroidSpawnTimer = 0f;
+    private float AstroidSpawnTimer = 30f;
 
     void Start()
     {
@@ -21,6 +21,9 @@ public class AstroidSpawn : MonoBehaviour
             AstroidSpawnTimer = 0f;
             Instantiate(Asteroid_SO_.GetAstroid(), GetRandomPosition(), Quaternion.identity);
         }
+
+        if (Input.GetKeyUp(KeyCode.Alpha0))
+            AstroidSpawnTimer = 30f;
     }
 
     private Vector3 GetRandomPosition()

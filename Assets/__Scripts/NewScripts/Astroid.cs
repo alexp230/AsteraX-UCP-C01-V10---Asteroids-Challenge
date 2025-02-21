@@ -62,7 +62,8 @@ public class Astroid : MonoBehaviour
             float y = Random.Range(parentBounds.min.y, parentBounds.max.y);
             float z = Random.Range(parentBounds.min.z, parentBounds.max.z);
 
-            Instantiate(smallAstroid, new Vector3(x, y, z), Quaternion.identity, this.transform);
+            GameObject astroid = Instantiate(smallAstroid, new Vector3(x, y, z), Quaternion.identity, this.transform);
+            astroid.GetComponent<MeshCollider>().enabled = false;
         }
     }
 
@@ -78,6 +79,26 @@ public class Astroid : MonoBehaviour
             this.transform.localPosition = Vector3.zero;
             this.transform.localRotation = Quaternion.identity;
         }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
+        {
+            collision.collider.enabled = false;
+            Destroy(collision.gameObject);
+        }
+        
+        if (this.AsteroidType != 'C')
+        {
+            foreach (Transform child in this.transform)
+                child.GetComponent<MeshCollider>().enabled = true;
+
+            this.transform.GetChild(0).SetParent(null);
+            this.transform.GetChild(0).SetParent(null);
+        }
+        
+        Destroy(this.gameObject);
     }
 
 }
