@@ -85,6 +85,8 @@ public class Astroid : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet")
         {
+            PlayerScore.IncreasePlayerScore(this.AsteroidType);
+            
             collision.collider.enabled = false;
             Destroy(collision.gameObject);
         }

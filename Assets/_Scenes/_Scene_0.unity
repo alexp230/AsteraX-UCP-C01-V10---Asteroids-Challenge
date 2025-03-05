@@ -523,6 +523,7 @@ GameObject:
   - component: {fileID: 1199415304}
   - component: {fileID: 1199415305}
   - component: {fileID: 1199415307}
+  - component: {fileID: 1199415310}
   m_Layer: 8
   m_Name: PlayerShip
   m_TagString: Player
@@ -616,6 +617,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!114 &1199415310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199415303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8488d7acac5a5a34aa6ca870bc977ca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1350387318
 GameObject:
   m_ObjectHideFlags: 0

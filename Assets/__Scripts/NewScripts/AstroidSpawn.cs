@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class AstroidSpawn : MonoBehaviour
 {
-    private const float ASTROID_SPAWN_TIMER = 30f;
+    private const float ASTROID_SPAWN_TIMER = 5f;
 
     [SerializeField] private Asteroid_SO Asteroid_SO_;
     private Vector3 ScreenBounds;
