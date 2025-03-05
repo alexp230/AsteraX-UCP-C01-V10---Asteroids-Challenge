@@ -524,6 +524,7 @@ GameObject:
   - component: {fileID: 1199415305}
   - component: {fileID: 1199415307}
   - component: {fileID: 1199415310}
+  - component: {fileID: 1199415311}
   m_Layer: 8
   m_Name: PlayerShip
   m_TagString: Player
@@ -627,6 +628,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8488d7acac5a5a34aa6ca870bc977ca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1199415311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199415303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1d5d7a8b9a3ff043a423d1f2cf4d6f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1350387318
@@ -746,6 +759,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1199415308}
     m_Modifications:
+    - target: {fileID: 1472542294352466, guid: 2a4573fd70efa094d84f72d5723ef9a6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4149291233437366, guid: 2a4573fd70efa094d84f72d5723ef9a6, type: 3}
       propertyPath: m_RootOrder
       value: 1

@@ -83,6 +83,11 @@ public class Astroid : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<PlayerRespawn>().EnablePlayer(false);
+        }
+
         if (collision.gameObject.tag == "Bullet")
         {
             PlayerScore.IncreasePlayerScore(this.AsteroidType);
