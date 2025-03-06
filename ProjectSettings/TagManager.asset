@@ -8,6 +8,7 @@ TagManager:
   - OnScreenBounds
   - DestroyWithLevelChange
   - ScreenBoundaries
+  - Asteroid
   layers:
   - Default
   - TransparentFX
