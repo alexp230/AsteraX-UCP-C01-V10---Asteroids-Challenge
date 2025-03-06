@@ -3,11 +3,13 @@ using UnityEngine;
 public class Astroid : MonoBehaviour
 {
     [SerializeField] Asteroid_SO Asteroid_SO_;
+    private static GameObject PlayerShip;
 
     char AsteroidType;
 
     void Awake()
     {
+        PlayerShip = GameObject.Find("PlayerShip");
         AsteroidType = this.name[9];
 
         this.transform.LookAt(Vector3.zero);
@@ -90,7 +92,7 @@ public class Astroid : MonoBehaviour
 
         if (collision.gameObject.tag == "Bullet")
         {
-            PlayerScore.IncreasePlayerScore(this.AsteroidType);
+            PlayerShip.GetComponent<PlayerScore>().IncreasePlayerScore(this.AsteroidType);
             
             collision.collider.enabled = false;
             Destroy(collision.gameObject);

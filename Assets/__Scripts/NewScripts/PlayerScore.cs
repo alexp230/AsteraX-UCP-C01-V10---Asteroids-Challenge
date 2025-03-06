@@ -1,11 +1,13 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerScore : MonoBehaviour
 {
-    public static int Score = 0;
+    public UnityEvent<int> ScoreChange;
 
+    private int Score = 0;
 
-    public static void IncreasePlayerScore(char astroidType)
+    public void IncreasePlayerScore(char astroidType)
     {
         switch (astroidType)
         {
@@ -15,6 +17,7 @@ public class PlayerScore : MonoBehaviour
         }
 
         print($"Score: {Score}");
+        ScoreChange?.Invoke(Score);
     }
 
 }
