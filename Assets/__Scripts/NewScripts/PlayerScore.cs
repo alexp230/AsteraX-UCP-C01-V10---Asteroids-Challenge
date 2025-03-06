@@ -5,7 +5,14 @@ public class PlayerScore : MonoBehaviour
 {
     public UnityEvent<int> ScoreChange;
 
-    private int Score = 0;
+    private int Score;
+
+    void Start()
+    {
+        Score = 0;
+        ScoreChange?.Invoke(Score);
+
+    }
 
     public void IncreasePlayerScore(char astroidType)
     {
@@ -15,8 +22,6 @@ public class PlayerScore : MonoBehaviour
             case 'B': Score += 200; break;
             case 'C': Score += 300; break;
         }
-
-        print($"Score: {Score}");
         ScoreChange?.Invoke(Score);
     }
 

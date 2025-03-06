@@ -2,16 +2,19 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerRespawn : MonoBehaviour
 {
+    public UnityEvent<int> LivesChanged;
     private int PlayerLives;
     private Vector3 ScreenBounds;
     private bool PlayerIsActive;
 
     void Start()
     {
-        PlayerLives = 1;
+        PlayerLives = 3;
+        LivesChanged?.Invoke(PlayerLives);
         ScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, this.transform.position.z));
         PlayerIsActive = true;
     }
@@ -57,12 +60,8 @@ public class PlayerRespawn : MonoBehaviour
     }
     private void DecreasePlayerLife()
     {
-        if (--PlayerLives < 0)
-            EndGame();
-    }
-    private void EndGame()
-    {
-        print("Player is out of Lives");
+        --PlayerLives;
+        LivesChanged?.Invoke(PlayerLives);
     }
 
 
